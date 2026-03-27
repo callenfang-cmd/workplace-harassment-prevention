@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>职场性骚扰防治 完全指南</title>
+<style>
+  /* ===== Reset & Base ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+    background: #f5f5f3;
+  }
+
+  /* ===== Layout ===== */
+  .page-wrapper {
+    display: flex;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 16px;
+    position: relative;
+  }
+  .main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 0 0 60px 0;
+  }
+  .sidebar {
+    width: 200px;
+    flex-shrink: 0;
+    margin-left: 24px;
+  }
+  .sidebar-sticky {
+    position: sticky;
+    top: 20px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 16px;
+    font-size: 13px;
+  }
+  .sidebar-sticky h4 {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #eee;
+  }
+  .sidebar-sticky ul { list-style: none; }
+  .sidebar-sticky ul li { margin: 6px 0; }
+  .sidebar-sticky ul li a {
+    color: #555;
+    text-decoration: none;
+    display: block;
+    padding: 3px 6px;
+    border-radius: 4px;
+    transition: background 0.15s, color 0.15s;
+    cursor: pointer;
+  }
+  .sidebar-sticky ul li a:hover,
+  .sidebar-sticky ul li a.active {
+    background: #e8f5e9;
+    color: #2d6a4f;
+    font-weight: 600;
+  }
+  .sidebar-sticky ul li.sub a {
+    padding-left: 16px;
+    font-size: 12px;
+    color: #777;
+  }
+  .sidebar-sticky ul li.sub a:hover { color: #2d6a4f; }
+
+  /* ===== Top Banner ===== */
+  .site-banner {
+    background: linear-gradient(135deg, #2d6a4f 0%, #40916c 60%, #52b788 100%);
+    color: #fff;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .banner-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    min-height: 100px;
+  }
+  .banner-illus {
+    font-size: 48px;
+    margin-right: 24px;
+    letter-spacing: -4px;
+    opacity: 0.85;
+  }
+  .banner-text h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .banner-text p { font-size: 13px; opacity: 0.85; margin-top: 4px; }
+
+  /* ===== Chapter Navigation (top tabs) ===== */
+  .chapter-nav {
+    background: #fff;
+    border-bottom: 2px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .chapter-nav-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    gap: 0;
+  }
+  .chapter-nav button {
+    border: none;
+    background: none;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #555;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .chapter-nav button:hover { color: #2d6a4f; }
+  .chapter-nav button.active {
+    color: #2d6a4f;
+    border-bottom-color: #2d6a4f;
+    font-weight: 700;
+  }
+
+  /* ===== Section Pages ===== */
+  .section-page { display: none; }
+  .section-page.active { display: block; }
+
+  /* ===== Page Header Illustration Strip ===== */
+  .page-hero {
+    background: linear-gradient(90deg, #d8f3dc 0%, #b7e4c7 50%, #d8f3dc 100%);
+    border-radius: 0 0 8px 8px;
+    padding: 24px 28px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    overflow: hidden;
+    position: relative;
+  }
+  .page-hero .hero-icons { font-size: 36px; letter-spacing: -6px; flex-shrink: 0; }
+  .page-hero .hero-title { font-size: 20px; font-weight: 700; color: #1b4332; }
+  .page-hero .hero-subtitle { font-size: 13px; color: #2d6a4f; margin-top: 4px; }
+  .page-hero .hero-badge {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    border: 2px solid #e63946;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: #e63946;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  /* ===== Content Blocks ===== */
+  .content-block {
+    background: #fff;
+    border-radius: 8px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  h2.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1b4332;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #b7e4c7;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  h2.section-title::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: #2d6a4f;
+    border-radius: 2px;
+    display: inline-block;
+  }
+  h3.subsection-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2d6a4f;
+    margin: 20px 0 10px;
+  }
+  h4.mini-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    margin: 14px 0 6px;
+  }
+
+  p { margin-bottom: 10px; }
+  ul, ol { padding-left: 22px; margin-bottom: 10px; }
+  li { margin-bottom: 4px; }
+
+  /* ===== Highlight Boxes ===== */
+  .box-green {
+    background: #d8f3dc;
+    border-left: 4px solid #2d6a4f;
+    border-radius: 0 6px 6px 0;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 14px;
+    color: #1b4332;
+  }
+  .box-yellow {
+    background: #fff9e6;
+    border-left: 4px solid #e9c46a;
+    border-radius: 0 6px 6px 0;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 14px;
+    color: #7d5a00;
+  }
+  .box-orange {
+    background: #fff3e0;
+    border-left: 4px solid #f4a261;
+    border-radius: 0 6px 6px 0;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 14px;
+    color: #7d3c00;
+  }
+  .box-gray {
+    background: #f5f5f5;
+    border-left: 4px solid #aaa;
+    border-radius: 0 6px 6px 0;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 14px;
+    color: #444;
+  }
+
+  mark.green { background: #b7e4c7; padding: 0 3px; border-radius: 3px; font-weight: 600; }
+  mark.yellow { background: #ffe066; padding: 0 3px; border-radius: 3px; }
+  mark.orange { background: #ffd6a5; padding: 0 3px; border-radius: 3px; }
+
+  /* ===== Tables ===== */
+  .table-wrap { overflow-x: auto; margin: 14px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  th {
+    background: #2d6a4f;
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td {
+    padding: 9px 14px;
+    border: 1px solid #e0e0e0;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: #f9f9f9; }
+  tr:hover td { background: #f0faf3; }
+
+  /* ===== Download Buttons ===== */
+  .download-section {
+    background: #f0faf3;
+    border: 1px solid #b7e4c7;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .download-section h3 {
+    font-size: 14px;
+    color: #1b4332;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .download-section h3::before { content: "📎"; }
+  .download-list { list-style: none; padding: 0; }
+  .download-list li {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .download-list li span { flex: 1; font-size: 13.5px; color: #444; }
+  .btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #2d6a4f;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 12.5px;
+    font-weight: 600;
+    transition: background 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .btn-download:hover { background: #1b4332; }
+  .btn-download::before { content: "⬇"; font-size: 11px; }
+
+  /* ===== Inline Download Strip ===== */
+  .inline-download {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f0faf3;
+    border: 1px solid #b7e4c7;
+    border-radius: 6px;
+    padding: 8px 14px;
+    margin: 10px 0 16px;
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+  .inline-download .dl-icon { font-size: 15px; flex-shrink: 0; }
+  .inline-download .dl-label { color: #444; flex: 1; min-width: 0; }
+  .inline-download .dl-label strong { color: #1b4332; }
+
+  /* ===== Module Cards (homepage) ===== */
+  .module-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .module-card {
+    border: 2px solid #b7e4c7;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #fff;
+  }
+  .module-card:hover {
+    border-color: #2d6a4f;
+    box-shadow: 0 4px 16px rgba(45,106,79,0.12);
+    transform: translateY(-2px);
+  }
+  .module-card .card-num {
+    font-size: 28px;
+    font-weight: 900;
+    color: #b7e4c7;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .module-card .card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1b4332;
+    margin-bottom: 8px;
+  }
+  .module-card .card-desc { font-size: 13px; color: #555; line-height: 1.6; }
+  .module-card .card-cta {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #2d6a4f;
+    font-weight: 600;
+  }
+  .module-card .card-cta::after { content: " →"; }
+
+  /* ===== Acknowledgement & Legal Section ===== */
+  .band {
+    border-radius: 8px;
+    padding: 20px 28px;
+    margin: 20px 0;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .band.green { background: linear-gradient(90deg, #2d6a4f, #52b788); }
+  .band.legal { background: linear-gradient(90deg, #1b4332, #2d6a4f); }
+  .band .band-icons { font-size: 28px; }
+
+  .org-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 16px 0;
+  }
+  .org-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .org-card .org-tag {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .org-card .org-name {
+    font-weight: 700;
+    color: #2d6a4f;
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .org-card p { font-size: 13px; color: #555; }
+
+  /* ===== Flowchart / Decision Tree ===== */
+  .flow-box {
+    border: 2px solid #2d6a4f;
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin: 10px 0;
+    font-size: 14px;
+    background: #f0faf3;
+    text-align: center;
+    font-weight: 600;
+    color: #1b4332;
+  }
+  .flow-arrow { text-align: center; color: #2d6a4f; font-size: 20px; margin: 4px 0; }
+  .flow-row { display: flex; gap: 16px; align-items: flex-start; }
+  .flow-col { flex: 1; }
+  .flow-branch {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    margin: 8px 0;
+  }
+  .flow-yes, .flow-no {
+    flex: 1;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+  .flow-yes { background: #d8f3dc; border: 1px solid #2d6a4f; }
+  .flow-no { background: #ffe8e8; border: 1px solid #e63946; }
+  .flow-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+  }
+  .flow-yes .flow-label { color: #2d6a4f; }
+  .flow-no .flow-label { color: #e63946; }
+
+  /* ===== Tags ===== */
+  .tag {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #2d6a4f;
+    border: 1px solid #b7e4c7;
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 12px;
+    margin: 2px;
+  }
+
+  /* ===== Wheel / Circle Diagram (CSS approximation) ===== */
+  .compliance-wheel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .wheel-item {
+    border-radius: 8px;
+    padding: 14px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .wheel-item:nth-child(1) { background: #d8f3dc; color: #1b4332; }
+  .wheel-item:nth-child(2) { background: #fff9e6; color: #7d5a00; }
+  .wheel-item:nth-child(3) { background: #ffe8e8; color: #b00020; }
+  .wheel-item:nth-child(4) { background: #e8f0fe; color: #1a3a7c; }
+  .wheel-item:nth-child(5) { background: #fce4ec; color: #880e4f; }
+  .wheel-item:nth-child(6) { background: #f3e5f5; color: #4a148c; }
+  .wheel-center {
+    grid-column: 1 / -1;
+    background: #2d6a4f;
+    color: #fff;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-weight: 700;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  /* ===== Details / Collapse ===== */
+  details { margin: 10px 0; }
+  details summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: #2d6a4f;
+    padding: 8px 12px;
+    background: #f0faf3;
+    border-radius: 6px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    user-select: none;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::before { content: "▶"; font-size: 11px; transition: transform 0.2s; }
+  details[open] summary::before { transform: rotate(90deg); }
+  details > *:not(summary) { padding: 10px 12px 0; }
+
+  /* ===== Back to Top ===== */
+  #back-to-top {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: #2d6a4f;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: background 0.2s;
+  }
+  #back-to-top:hover { background: #1b4332; }
+  #back-to-top.visible { display: flex; }
+
+  /* ===== Footer ===== */
+  footer {
+    background: #1b4332;
+    color: #b7e4c7;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    margin-top: 40px;
+  }
+  footer a { color: #d8f3dc; }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    .sidebar { display: none; }
+    .page-wrapper { padding: 0 10px; }
+    .chapter-nav button { padding: 12px 12px; font-size: 12px; }
+    .org-grid { grid-template-columns: 1fr; }
+    .content-block { padding: 18px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BANNER -->
+<header class="site-banner">
+  <div class="banner-inner">
+    <div class="banner-illus">👩‍💼🧑‍💼👨‍⚖️🤝</div>
+    <div class="banner-text">
+      <h1>职场性骚扰防治 完全指南</h1>
+      <p>受中国法律管辖的企业、单位、社会组织 — 内部负责性骚扰防治专职人员实务指南</p>
+    </div>
+  </div>
+</header>
+
+<!-- CHAPTER NAVIGATION -->
+<nav class="chapter-nav" role="navigation" aria-label="章节导航">
+  <div class="chapter-nav-inner">
+    <button class="active" onclick="showSection('home', this)">🏠 首页</button>
+    <button onclick="showSection('define', this)">📖 我们这样来界定"性骚扰"</button>
+    <button onclick="showSection('tools', this)">🔍 性骚扰的判定工具</button>
+    <button onclick="showSection('compliance', this)">🏗 搭建合规体系</button>
+  </div>
+</nav>
+
+<!-- MAIN LAYOUT -->
+<div class="page-wrapper" style="margin-top:24px;">
+  <main class="main-content">
+
+    <!-- ===== SECTION 1: 首页 ===== -->
+    <section id="home" class="section-page active">
+      <div class="page-hero">
+        <div class="hero-icons">😊👩‍💼🧑‍⚕️📚</div>
+        <div>
+          <div class="hero-title">职场性骚扰防治 完全指南</div>
+          <div class="hero-subtitle">ForNGO 复恩法律 × 億方公益基金会</div>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <div class="box-green">
+          <strong>👋 你好！</strong>这是一份建议为<mark class="green">受中国法律管辖</mark>的企业、单位、社会组织<mark class="green">内部负责性骚扰防治的专职人员</mark>准备的实务指南。
+        </div>
+
+        <p>这份指南是对《职场反性骚扰开源工具包》的更新、延展与补充。</p>
+        <p>如果您在组织内负责与性骚扰防治相关的工作，或有志于成为企业、组织、单位的性别类专家，这份实务指南或许能为您提供一些帮助。</p>
+        <p style="font-size:13px;color:#888;">
+          <em>* 职业 tag：人力资源、合规、组织文化、组织内部治理、企业社会责任、组织发展、性别研究等</em>
+        </p>
+
+        <h3 class="subsection-title" style="margin-top:24px;">在这份专业而深度的实务指南中，我们——</h3>
+        <div class="module-cards">
+          <div class="module-card" onclick="showSection('define', document.querySelectorAll('.chapter-nav button')[1])">
+            <div class="card-num">01</div>
+            <div class="card-title">助力您深度理解并透析「性骚扰」的界定</div>
+            <div class="card-desc">以大陆法律规则为基础，以国际前沿的性别友善意识为引导，以可落地的实务经验为参照，帮助您对本土民事领域性骚扰防治语境的了解。</div>
+            <span class="card-cta">点击进入</span>
+          </div>
+          <div class="module-card" onclick="showSection('tools', document.querySelectorAll('.chapter-nav button')[2])">
+            <div class="card-num">02</div>
+            <div class="card-title">将组织内对性骚扰的判定转化为一份可实操的工具</div>
+            <div class="card-desc">以合理人原则为基础，原创画布工具，引导您从案证到判定，对包括复杂个案在内的事件达成认定。</div>
+            <span class="card-cta">点击进入</span>
+          </div>
+          <div class="module-card" onclick="showSection('compliance', document.querySelectorAll('.chapter-nav button')[3])">
+            <div class="card-num">03</div>
+            <div class="card-title">为您梳理合规团队的搭建体系</div>
+            <div class="card-desc">配合《职场反性骚扰开源工具包》，为您在组织内部联动各利益方、组建团队提供更清晰的指引，推动安全职场的持续建设。</div>
+            <span class="card-cta">点击进入</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 致谢 -->
+      <div class="content-block">
+        <div class="band green">
+          <span class="band-icons">🙏</span> 致 谢 <span class="band-icons">🙏</span>
+        </div>
+
+        <h3 class="subsection-title">发起方 &amp; 主笔</h3>
+        <div class="org-grid">
+          <div class="org-card">
+            <div class="org-tag">发起方 / 主笔</div>
+            <div class="org-name">ForNGO 复恩法律<br>上海复恩社会组织法律研究与服务中心</div>
+            <p>上海复恩社会组织法律研究与服务中心是国内第一家社会力量发起的非营利组织法研究社会智库，也是一个为社会组织提供专业法律能力建设的支持型平台。复恩的宗旨是促进社会组织依法合规运营，推动中国公益事业及非营利事业发展。</p>
+          </div>
+          <div class="org-card">
+            <div class="org-tag">联合发起方 / 资助方</div>
+            <div class="org-name">億方公益基金会<br>Yifang Foundation</div>
+            <p>億方公益基金会（Yifang Foundation）是 2013 年在北京市政府登记注册成立的资助型基金会。億方公益基金会的资助理念是：人本、专业、创新、前瞻。重点关注基层公益项目，促进社会创新与发展，推动中国公益行业专业化水平的提高。</p>
+          </div>
+        </div>
+
+        <h3 class="subsection-title">鸣谢名单</h3>
+        <p>王笑哲、杨子曜、虞川颖、赵航、欧阳顾艺、邱子珊、郑摩、张丁予、黄倩宇</p>
+        <p>复恩法律 志愿者 &nbsp;|&nbsp; 安杰世泽律师事务所 志愿者</p>
+      </div>
+
+      <!-- 法律声明 -->
+      <div class="content-block">
+        <div class="band legal">
+          <span class="band-icons">⚖️</span> 法律声明 <span class="band-icons">⚖️</span>
+        </div>
+        <div style="margin-top:16px; font-size:13.5px; color:#444; line-height:2;">
+          <p>本指南由<strong>億方公益基金会</strong>资助出品，<strong>上海复恩社会组织法律研究与服务中心</strong>编写，经过行业专家审议。版权由<strong>億方公益基金会</strong>与<strong>上海复恩社会组织法律研究与服务中心</strong>共同所有。</p>
+          <p>本手册中的内容和意见仅供参考，不应依赖或视为专业意见或者法律顾问同的替代。億方公益基金会和上海复恩社会组织法律研究与服务中心在任何情况下均不对由于使用手册而造成的任何损失负责。如需就具体情况寻求建议，请向有关机关和专业人士咨询。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 2: 界定性骚扰 ===== -->
+    <section id="define" class="section-page">
+      <div class="page-hero">
+        <div class="hero-icons">👥🚫📋</div>
+        <div>
+          <div class="hero-title">我们这样来界定"性骚扰"</div>
+          <div class="hero-subtitle">性骚扰的定义、法律框架与判断标准</div>
+        </div>
+        <div class="hero-badge">NO<br>MEANS<br>NO</div>
+      </div>
+
+      <div class="content-block">
+        <div class="box-green">
+          <strong>📝 推荐阅读前：</strong>先完成性骚扰定义初始认知测试——检验您的已有认知，以提升阅读体验。
+        </div>
+
+        <p>性骚扰是指<mark class="green">违背他人意愿</mark>、<mark class="green">具有性意味</mark>的言语或行为，带给他人<mark class="yellow">不适、恐惧、冒犯感</mark>。</p>
+
+        <h2 class="section-title" id="def-what">一、什么是性骚扰？</h2>
+        <p>性骚扰由三个维度共同构成：</p>
+        <div class="flow-row" style="gap:12px; margin:16px 0;">
+          <div class="flow-box" style="flex:1;">① 违背他人意愿</div>
+          <div class="flow-box" style="flex:1;">② 具有性意味</div>
+          <div class="flow-box" style="flex:1;">③ 言语或行为</div>
+        </div>
+        <p>三个要素<strong>需同时满足</strong>，才构成性骚扰。</p>
+
+        <h3 class="subsection-title">什么是"违背他人意愿"？</h3>
+        <p>判断是否违背他人意愿，需考量以下情形：</p>
+        <ul>
+          <li>申请人已经<strong>明确表示拒绝</strong>（言语或行动）；</li>
+          <li>申请人<strong>未明确表示意愿</strong>，但对方<mark class="green">应当合理预见</mark>申请人不接受；</li>
+          <li>即便申请人曾表示同意，若此后明确撤回同意，仍可构成违背意愿。</li>
+        </ul>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>情形</th>
+                <th>对方已表示不愿意</th>
+                <th>对方未明确表示意愿</th>
+                <th>对方已表示愿意</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>判断结论</strong></td>
+                <td style="color:#c00;font-weight:600;">构成性骚扰</td>
+                <td style="color:#e65100;font-weight:600;">可能构成性骚扰<br><small>（视具体情境）</small></td>
+                <td style="color:#2d6a4f;font-weight:600;">不构成性骚扰</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="subsection-title">什么是"具有性意味"？</h3>
+        <p>以下类型的内容通常具有性意味：</p>
+        <ul>
+          <li>直接与<strong>性器官</strong>或<strong>性行为</strong>相关的言语、图像、肢体接触；</li>
+          <li>带有<strong>性暗示</strong>或<strong>性联想</strong>的言行举止；</li>
+          <li>针对他人身体的<strong>不当评价</strong>或<strong>窥视</strong>；</li>
+          <li>与性相关的<strong>玩笑、段子、传播内容</strong>。</li>
+        </ul>
+        <div class="box-yellow">
+          <strong>注意：</strong>判断是否"具有性意味"时，应以<mark class="yellow">行为本身的性质</mark>为准，而非行为人的主观意图。即使行为人声称"只是开玩笑"，也不影响性骚扰的认定。
+        </div>
+
+        <div class="inline-download">
+          <span class="dl-icon">📊</span>
+          <span class="dl-label"><strong>参考资料：</strong>各界别组织的性骚扰定义数据库——收录国内外政府、企业、NGO等各类组织对"性骚扰"的定义</span>
+          <a class="btn-download" href="2.5 各界别组织的性骚扰定义数据库.xlsx" download>下载 XLSX</a>
+        </div>
+
+        <h2 class="section-title" id="def-legal">二、"性骚扰"的法律定义</h2>
+        <p>中国现行法律对性骚扰的定义相对较新。</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>法律法规</th>
+                <th>年份</th>
+                <th>核心条款</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>《妇女权益保障法》（修订）</td>
+                <td>2005年</td>
+                <td>首次将"性骚扰"列入法律；明确禁止对妇女实施性骚扰</td>
+              </tr>
+              <tr>
+                <td>《民法典》</td>
+                <td>2021年</td>
+                <td>第1010条：明确性骚扰定义——违背他人意愿，以言语、文字、图像、肢体行为等方式对他人实施性骚扰的，受害人有权依法请求行为人承担民事责任</td>
+              </tr>
+              <tr>
+                <td>《妇女权益保障法》（再次修订）</td>
+                <td>2022年</td>
+                <td>进一步细化用人单位防治义务</td>
+              </tr>
+              <tr>
+                <td>《深圳市防治性骚扰行为指南》</td>
+                <td>2021年</td>
+                <td>地方性专项指引 &nbsp;<a class="btn-download" href="2.2《深圳市防治性骚扰行为指南》2021.3.14-link.txt" download style="font-size:11.5px;padding:3px 10px;">下载 TXT</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="inline-download">
+          <span class="dl-icon">📄</span>
+          <span class="dl-label"><strong>参考资料：</strong>性骚扰的法律定义溯源——梳理国内外立法沿革与条文演变</span>
+          <a class="btn-download" href="2.6 性骚扰的法律定义溯源.docx" download>下载 DOCX</a>
+        </div>
+
+        <h2 class="section-title" id="def-types">三、性骚扰的常见类型</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>类型</th>
+                <th>定义</th>
+                <th>示例</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>言语性骚扰</strong></td>
+                <td>通过言语方式实施</td>
+                <td>带有性意味的玩笑、评价身体、传播性相关段子、询问性生活</td>
+              </tr>
+              <tr>
+                <td><strong>非言语性骚扰</strong></td>
+                <td>通过非言语方式实施</td>
+                <td>发送色情图片/表情、盯视身体部位、做出性暗示手势</td>
+              </tr>
+              <tr>
+                <td><strong>肢体性骚扰</strong></td>
+                <td>通过身体接触实施</td>
+                <td>未经同意触碰身体、强行拥抱、阻挡去路</td>
+              </tr>
+              <tr>
+                <td><strong>交换型性骚扰</strong><br>（Quid Pro Quo）</td>
+                <td>以权力关系为基础，将性行为与利益交换相关联</td>
+                <td>以性服务换取晋升、加薪；以拒绝为由降职、报复</td>
+              </tr>
+              <tr>
+                <td><strong>环境型性骚扰</strong></td>
+                <td>营造充满性化内容的工作环境</td>
+                <td>职场中频繁传播性内容、形成充斥性别歧视言论的工作氛围</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="inline-download">
+          <span class="dl-icon">🏢</span>
+          <span class="dl-label"><strong>企业案例参考：</strong>西门子商业行为准则——跨国企业性骚扰政策的实践范本</span>
+          <a class="btn-download" href="2.3西门子商业行为准则.pdf" download>下载 PDF</a>
+        </div>
+
+        <h2 class="section-title" id="def-context">四、性骚扰的情境分析</h2>
+        <p>以下是对不同情境的性骚扰判断的简化分析框架：</p>
+
+        <details>
+          <summary>情境一：上下级关系中的性骚扰</summary>
+          <div>
+            <p>上下级关系中存在明显的<strong>权力不对等</strong>，下级可能因担忧职业影响而无法明确拒绝。在此情境下：</p>
+            <ul>
+              <li>下级的"沉默"或"顺从"<strong>不等于同意</strong>；</li>
+              <li>上级应当负有<strong>更高注意义务</strong>；</li>
+              <li>任何形式的性化评论、不当接触均应视为严肃对待的潜在性骚扰。</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>情境二：平级同事之间的性骚扰</summary>
+          <div>
+            <p>即便不存在直接权力关系，同事之间的性骚扰同样成立。关键在于：</p>
+            <ul>
+              <li>行为是否<strong>违背对方意愿</strong>；</li>
+              <li>是否形成<strong>令人不适的工作环境</strong>；</li>
+              <li>"玩笑""娱乐"等主观意图<strong>不能免责</strong>。</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>情境三：第三方（客户/访客）实施的性骚扰</summary>
+          <div>
+            <p>即使性骚扰由非本组织人员实施，用人单位依然负有：</p>
+            <ul>
+              <li>采取<strong>合理预防措施</strong>的义务；</li>
+              <li>在员工遭受客户/访客性骚扰后提供<strong>支持和处理</strong>的义务。</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>情境四：网络/数字渠道中的性骚扰</summary>
+          <div>
+            <p>通过微信、邮件、社交媒体等数字渠道实施的性骚扰同样有效：</p>
+            <ul>
+              <li>发送不当图片、视频、文字均可构成性骚扰；</li>
+              <li>数字证据（截图、聊天记录）具有重要的<strong>保全价值</strong>。</li>
+            </ul>
+          </div>
+        </details>
+
+        <div class="inline-download">
+          <span class="dl-icon">⚖️</span>
+          <span class="dl-label"><strong>真实案例参考：</strong>2021—2022年性骚扰案件摘录汇总——涵盖不同情境类型的典型司法案例</span>
+          <a class="btn-download" href="2.4-2021-2022性骚扰案件摘录汇总.docx" download>下载 DOCX</a>
+        </div>
+
+        <h2 class="section-title" id="def-intl">五、国际视野：美国与中国性骚扰法律框架比较</h2>
+        <div class="box-gray">
+          在美国法律体系下，性骚扰被归类为<strong>性别歧视</strong>的一种（基于 Title VII），以"敌意工作环境"和"交换型性骚扰"为主要认定标准。中国法律体系则将性骚扰主要作为<strong>侵权行为</strong>处理（《民法典》第1010条）。两者在救济路径、举证责任等方面存在差异。
+        </div>
+        <div class="inline-download">
+          <span class="dl-icon">🇺🇸</span>
+          <span class="dl-label"><strong>延伸阅读：</strong>为何在美国法体系下，性骚扰被算作性别歧视的一种？</span>
+          <a class="btn-download" href="2.1为何在美国法体系下，性骚扰被算作性别歧视的一种？.docx" download>下载 DOCX</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 3: 判定工具 ===== -->
+    <section id="tools" class="section-page">
+      <div class="page-hero">
+        <div class="hero-icons">🔍⚖️📊🎯</div>
+        <div>
+          <div class="hero-title">性骚扰的判定工具</div>
+          <div class="hero-subtitle">从案证到结论的结构化判定框架</div>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <div class="box-green">
+          <strong>⚠️ 使用说明：</strong>本判定工具是专为组织内部性骚扰事件处理团队设计的<mark class="green">结构化辅助框架</mark>，并非对法律法规的诠释，也不追求唯一"正确"答案，而是帮助团队对事实进行<mark class="green">合理判断</mark>。
+        </div>
+
+        <h2 class="section-title" id="tool-principle">一、判定的基本原则</h2>
+        <h3 class="subsection-title">核心原则：合理人标准</h3>
+        <p>判定时，应代入一个<strong>"合理人"</strong>的视角：</p>
+        <div class="box-yellow">
+          一个理性、通情达理的人，在<mark class="yellow">相同的情境</mark>下，<mark class="yellow">是否会认为</mark>相关行为构成性骚扰？
+        </div>
+        <ul>
+          <li>不以行为人的主观意图为标准；</li>
+          <li>不以受害人的<strong>极端敏感性</strong>为标准；</li>
+          <li>考量<strong>社会文化背景</strong>与<strong>权力关系</strong>对个体感受的影响。</li>
+        </ul>
+
+        <h3 class="subsection-title">补充原则</h3>
+        <ul>
+          <li><strong>以受害者为中心：</strong>优先保护受害人的安全与尊严，避免二次伤害；</li>
+          <li><strong>保密原则：</strong>调查过程中严格保护相关方隐私；</li>
+          <li><strong>公正原则：</strong>给予被指控方合理申辩机会，不预设结论；</li>
+          <li><strong>审慎原则：</strong>对于无法确定的事实，采取对受害人有利的解释方向。</li>
+        </ul>
+
+        <h2 class="section-title" id="tool-steps">二、判定流程（三步法）</h2>
+
+        <h3 class="subsection-title">第一步：基本信息收集</h3>
+        <p>在正式判定前，先收集以下基础信息：</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>信息维度</th><th>需收集内容</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>事件基本情况</td><td>时间、地点、当事人关系、行为描述</td></tr>
+              <tr><td>当事人信息</td><td>双方在组织中的职级关系、部门、工作年限</td></tr>
+              <tr><td>证据材料</td><td>聊天记录、证人、视频、书面证明等</td></tr>
+              <tr><td>投诉意愿</td><td>受害人的诉求（正式投诉/非正式处理/仅需支持）</td></tr>
+              <tr><td>是否有紧急风险</td><td>受害人是否面临持续性风险或报复风险</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="subsection-title">第二步：三要素判定</h3>
+
+        <div class="flow-box">要素一：行为是否"具有性意味"？</div>
+        <div class="flow-branch">
+          <div class="flow-yes">
+            <div class="flow-label">是 →</div>
+            进入下一步判定
+          </div>
+          <div class="flow-no">
+            <div class="flow-label">否 →</div>
+            不构成性骚扰（但可能涉及其他违规行为，如职场欺凌）
+          </div>
+        </div>
+
+        <div class="flow-arrow">↓</div>
+
+        <div class="flow-box">要素二：行为是否"违背他人意愿"？</div>
+        <div class="flow-branch">
+          <div class="flow-yes">
+            <div class="flow-label">是 / 应当预见 →</div>
+            进入下一步判定
+          </div>
+          <div class="flow-no">
+            <div class="flow-label">否（双方明确自愿）→</div>
+            不构成性骚扰（需综合评估权力关系是否影响自愿性）
+          </div>
+        </div>
+
+        <div class="flow-arrow">↓</div>
+
+        <div class="flow-box">要素三：行为是否已实际发生（言语/文字/图像/肢体行为等）？</div>
+        <div class="flow-branch">
+          <div class="flow-yes">
+            <div class="flow-label">是 →</div>
+            <strong>初步认定构成性骚扰</strong>，进入第三步综合分析
+          </div>
+          <div class="flow-no">
+            <div class="flow-label">否（仅为意图未实施）→</div>
+            不构成性骚扰（但需关注后续风险）
+          </div>
+        </div>
+
+        <h3 class="subsection-title">第三步：综合情境分析</h3>
+        <p>在初步认定基础上，进一步考量以下因素，以形成综合判断：</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>分析维度</th><th>考量方向</th><th>对判定的影响</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>行为的严重程度</strong></td>
+                <td>单次严重 vs 持续轻微</td>
+                <td>单次严重行为亦可构成性骚扰；持续轻微行为累积可构成"敌意环境"</td>
+              </tr>
+              <tr>
+                <td><strong>权力关系</strong></td>
+                <td>上下级 vs 平级 vs 外部</td>
+                <td>权力不对等应加重对被指控方的审查</td>
+              </tr>
+              <tr>
+                <td><strong>受害人反应</strong></td>
+                <td>明确拒绝 / 沉默 / 回避</td>
+                <td>沉默不等于同意，尤其在权力不对等情境下</td>
+              </tr>
+              <tr>
+                <td><strong>行为持续性</strong></td>
+                <td>单次 vs 多次 vs 系统性</td>
+                <td>多次重复更易认定为性骚扰</td>
+              </tr>
+              <tr>
+                <td><strong>组织背景</strong></td>
+                <td>是否存在容忍性骚扰的文化</td>
+                <td>组织文化可能影响受害人表达意愿的能力</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="section-title" id="tool-complex">三、复杂情境的判定要点</h2>
+
+        <h3 class="subsection-title">情形 A：证据不足时</h3>
+        <div class="box-orange">
+          当双方陈述存在冲突、物证不足时：
+          <ul style="margin-top:8px;">
+            <li>优先采信的标准应为<mark class="orange">"更有可能发生"</mark>（高于民事诉讼优势证明标准）；</li>
+            <li>综合考量双方陈述的细节一致性、行为规律等间接证据；</li>
+            <li>不要求达到刑事诉讼的"排除合理怀疑"标准。</li>
+          </ul>
+        </div>
+
+        <h3 class="subsection-title">情形 B：双方存在/曾存在恋爱关系</h3>
+        <div class="box-yellow">
+          <ul>
+            <li>曾经的同意<strong>不构成永久同意</strong>；</li>
+            <li>关系结束后的性化骚扰同样构成性骚扰；</li>
+            <li>应重点评估当前行为是否<mark class="yellow">违背对方现时意愿</mark>。</li>
+          </ul>
+        </div>
+
+        <h3 class="subsection-title">情形 C：被指控方否认主观意图</h3>
+        <ul>
+          <li>"我只是开玩笑"<strong>不影响性骚扰认定</strong>；</li>
+          <li>判断标准为行为的<strong>客观性质</strong>，而非行为人的主观意图；</li>
+          <li>但主观意图可在后续处分决定中作为<strong>情节轻重</strong>的参考。</li>
+        </ul>
+
+        <h3 class="subsection-title">情形 D：第三方目击者报告</h3>
+        <ul>
+          <li>第三方发现的性骚扰线索同样可以启动内部程序；</li>
+          <li>应与受害人沟通确认其意愿后，再决定处理方式；</li>
+          <li>若受害人明确不愿正式投诉，组织仍有<strong>合规监督义务</strong>。</li>
+        </ul>
+
+        <h2 class="section-title" id="tool-result">四、判定结论与后续处理建议</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>判定结论</th><th>说明</th><th>建议后续行动</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="color:#c00;font-weight:700;">构成性骚扰</td>
+                <td>三要素均满足，综合分析确认</td>
+                <td>启动正式处分程序；为受害人提供支持；视情况上报相关部门</td>
+              </tr>
+              <tr>
+                <td style="color:#e65100;font-weight:700;">可能构成性骚扰<br>（证据不足）</td>
+                <td>要素存在但证据不充分</td>
+                <td>记录存档；加强监控；为受害人提供支持；告知双方</td>
+              </tr>
+              <tr>
+                <td style="color:#2d6a4f;font-weight:700;">不构成性骚扰<br>（但存在其他问题）</td>
+                <td>不满足性骚扰要件，但行为仍不当</td>
+                <td>依据其他规定处理（如职场欺凌、职业失当等）</td>
+              </tr>
+              <tr>
+                <td style="color:#555;font-weight:700;">不构成性骚扰</td>
+                <td>经核实行为不符合要件</td>
+                <td>告知投诉方并说明理由；提供心理支持；关闭案件并存档</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box-green">
+          <strong>重要提示：</strong>无论判定结论如何，组织均应：
+          <ul style="margin-top:6px;">
+            <li>全程保密，保护相关方隐私；</li>
+            <li>为受害人提供情感支持和必要资源；</li>
+            <li>对举报行为进行<mark class="green">严格的反报复保护</mark>；</li>
+            <li>完整记录调查过程，形成书面档案。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 4: 搭建合规体系 ===== -->
+    <section id="compliance" class="section-page">
+      <div class="page-hero">
+        <div class="hero-icons">🏗🏢📋✅</div>
+        <div>
+          <div class="hero-title">搭建合规体系</div>
+          <div class="hero-subtitle">从政策制定到运营落地的完整合规框架</div>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <div class="box-green">
+          本章配合《职场反性骚扰开源工具包》，为组织内部提供<mark class="green">搭建性骚扰防治合规体系</mark>的系统性指引，帮助合规/HR团队联动各利益方，推动安全职场的持续建设。
+        </div>
+
+        <h2 class="section-title" id="comp-overview">一、合规体系概览</h2>
+        <p>一个完整的职场性骚扰防治合规体系包含以下六大核心模块：</p>
+
+        <div class="compliance-wheel">
+          <div class="wheel-item">🛡 预防与政策<br><small>Prevention & Policy</small></div>
+          <div class="wheel-item">📚 培训与教育<br><small>Training & Education</small></div>
+          <div class="wheel-item">📣 举报与投诉<br><small>Reporting & Complaint</small></div>
+          <div class="wheel-item">🔍 调查与处理<br><small>Investigation & Response</small></div>
+          <div class="wheel-item">💛 支持与救济<br><small>Support & Remedy</small></div>
+          <div class="wheel-item">📊 监督与评估<br><small>Monitoring & Evaluation</small></div>
+        </div>
+
+        <h2 class="section-title" id="comp-team">二、合规团队的搭建</h2>
+        <h3 class="subsection-title">合规团队的构成</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>角色</th><th>主要职责</th><th>建议来源部门</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>牵头负责人</strong></td>
+                <td>整体协调、最终决策、对外沟通</td>
+                <td>人力资源/合规/法务部门负责人</td>
+              </tr>
+              <tr>
+                <td><strong>调查员</strong></td>
+                <td>收集证据、访谈当事人、形成调查报告</td>
+                <td>具备保密意识的HR/法务人员</td>
+              </tr>
+              <tr>
+                <td><strong>受害人联络员</strong></td>
+                <td>为受害人提供支持、传递信息、保护权益</td>
+                <td>EAP（员工援助计划）/HR</td>
+              </tr>
+              <tr>
+                <td><strong>法律顾问</strong></td>
+                <td>提供法律意见、评估法律风险</td>
+                <td>内部法务/外部律所</td>
+              </tr>
+              <tr>
+                <td><strong>高管支持者</strong></td>
+                <td>推动政策落地、确保资源支持</td>
+                <td>CEO/高层管理者</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box-yellow">
+          <strong>关键点：</strong>合规团队成员应具备<mark class="yellow">无利益冲突</mark>的条件。若被投诉人为高管，应考虑引入<mark class="yellow">外部独立调查方</mark>。
+        </div>
+
+        <h3 class="subsection-title">合规团队知情清单</h3>
+        <p>合规团队成员应当知晓以下内容：</p>
+        <ul>
+          <li>本组织性骚扰防治政策的全部内容；</li>
+          <li>受理投诉的流程与时限要求；</li>
+          <li>调查程序的基本规范；</li>
+          <li>保密义务及其边界；</li>
+          <li>反报复保护政策；</li>
+          <li>可为受害人提供的内外部支持资源。</li>
+        </ul>
+
+        <h2 class="section-title" id="comp-policy">三、政策制定</h2>
+        <h3 class="subsection-title">一份完整的性骚扰防治政策应包含：</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>章节</th><th>核心内容</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>1. 政策目的与适用范围</strong></td><td>本政策适用的组织范围、人员范围、行为范围（包括线上）</td></tr>
+              <tr><td><strong>2. 性骚扰的定义</strong></td><td>参照《民法典》第1010条及本指南第一章</td></tr>
+              <tr><td><strong>3. 禁止行为清单</strong></td><td>列举明确禁止的行为类型</td></tr>
+              <tr><td><strong>4. 举报渠道</strong></td><td>明确投诉方式（面谈/邮件/热线等）及受理方</td></tr>
+              <tr><td><strong>5. 调查程序</strong></td><td>启动条件、调查步骤、时限要求、双方权利</td></tr>
+              <tr><td><strong>6. 处分规定</strong></td><td>经认定后的处分梯度（警告/降职/解除劳动合同等）</td></tr>
+              <tr><td><strong>7. 受害人保护</strong></td><td>反报复条款、保密承诺、支持资源</td></tr>
+              <tr><td><strong>8. 政策更新与培训</strong></td><td>定期审查机制与强制培训要求</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="section-title" id="comp-training">四、培训与教育</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>培训对象</th><th>培训重点</th><th>建议频率</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>全体员工</strong></td>
+                <td>什么是性骚扰、如何举报、组织政策内容</td>
+                <td>入职培训 + 每年一次</td>
+              </tr>
+              <tr>
+                <td><strong>管理层 / 主管</strong></td>
+                <td>如何识别、如何回应举报、预防管理责任</td>
+                <td>每年一次 + 政策更新时</td>
+              </tr>
+              <tr>
+                <td><strong>合规/HR团队</strong></td>
+                <td>调查技能、法律知识、以受害者为中心的处理方式</td>
+                <td>每年一次 + 案例复盘</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="section-title" id="comp-checklist">五、合规体系自检清单</h2>
+        <div class="box-green">使用以下清单对组织现有合规体系进行自我评估：</div>
+
+        <details>
+          <summary>A. 政策层面</summary>
+          <div>
+            <ul>
+              <li>☐ 组织有书面的性骚扰防治政策</li>
+              <li>☐ 政策已向所有员工公示（含新员工）</li>
+              <li>☐ 政策在过去两年内经过审查/更新</li>
+              <li>☐ 政策涵盖线上骚扰行为</li>
+              <li>☐ 政策有明确的反报复条款</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>B. 举报机制层面</summary>
+          <div>
+            <ul>
+              <li>☐ 有至少两种以上的举报渠道（防止举报方与被投诉方为同一汇报线）</li>
+              <li>☐ 匿名举报渠道可用</li>
+              <li>☐ 举报渠道对外部相关方（如客户、供应商）也开放</li>
+              <li>☐ 员工知晓如何举报</li>
+              <li>☐ 有明确的受理时限承诺</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>C. 调查处理层面</summary>
+          <div>
+            <ul>
+              <li>☐ 有书面的调查程序规范</li>
+              <li>☐ 调查团队具备无利益冲突成员</li>
+              <li>☐ 调查过程全程保密</li>
+              <li>☐ 双方均有陈述机会</li>
+              <li>☐ 有书面调查报告留档</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>D. 受害人支持层面</summary>
+          <div>
+            <ul>
+              <li>☐ 为受害人提供心理支持资源（EAP或外部转介）</li>
+              <li>☐ 调查期间对受害人和被投诉人采取临时隔离措施</li>
+              <li>☐ 告知受害人可获得的外部法律救济途径</li>
+              <li>☐ 对受害人的举报行为严格保密</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>E. 培训与文化层面</summary>
+          <div>
+            <ul>
+              <li>☐ 全体员工每年接受性骚扰防治培训</li>
+              <li>☐ 管理层接受专项培训</li>
+              <li>☐ 领导层公开表态反对性骚扰</li>
+              <li>☐ 定期收集员工对职场安全的反馈</li>
+              <li>☐ 对投诉数据进行年度统计分析</li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- 下载资料 -->
+        <div class="download-section">
+          <h3>本章配套下载资料</h3>
+          <ul class="download-list">
+            <li>
+              <span>4.1 合规团队知情清单</span>
+              <a class="btn-download" href="4.1合规团队知情清单.docx" download>下载 DOCX</a>
+            </li>
+            <li>
+              <span>4.2 《（填入组织名）职场性骚扰防治政策》模板</span>
+              <a class="btn-download" href="4.2《_____(填入组织名)职场性骚扰防治政策》.docx" download>下载 DOCX</a>
+            </li>
+            <li>
+              <span>4.3 合规体系自检列表</span>
+              <a class="btn-download" href="4.3合规体系自检列表.docx" download>下载 DOCX</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-sticky">
+      <h4>章节目录</h4>
+      <ul id="sidebar-nav">
+        <!-- Dynamically managed by JS -->
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="back-to-top" title="返回顶部" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- FOOTER -->
+<footer>
+  <p>职场性骚扰防治 完全指南 &nbsp;|&nbsp; <strong>ForNGO 复恩法律</strong> × <strong>億方公益基金会</strong></p>
+  <p style="margin-top:6px;font-size:12px;opacity:0.7;">本手册内容仅供参考，不构成法律建议。如需专业咨询，请向有关机关和专业人士咨询。</p>
+</footer>
+
+<script>
+// ===== Section Navigation =====
+const sidebarContents = {
+  home: [
+    { text: '🏠 首页', anchor: 'home', sub: false },
+    { text: '指南简介', anchor: 'home', sub: true },
+    { text: '三大模块', anchor: 'home', sub: true },
+    { text: '致谢', anchor: 'home', sub: true },
+    { text: '法律声明', anchor: 'home', sub: true },
+  ],
+  define: [
+    { text: '📖 界定性骚扰', anchor: 'define', sub: false },
+    { text: '一、什么是性骚扰？', anchor: 'def-what', sub: true },
+    { text: '二、性骚扰的法律定义', anchor: 'def-legal', sub: true },
+    { text: '三、性骚扰的常见类型', anchor: 'def-types', sub: true },
+    { text: '四、情境分析', anchor: 'def-context', sub: true },
+    { text: '五、中美法律比较', anchor: 'def-intl', sub: true },
+  ],
+  tools: [
+    { text: '🔍 判定工具', anchor: 'tools', sub: false },
+    { text: '一、基本原则', anchor: 'tool-principle', sub: true },
+    { text: '二、判定流程（三步法）', anchor: 'tool-steps', sub: true },
+    { text: '三、复杂情境要点', anchor: 'tool-complex', sub: true },
+    { text: '四、结论与处理建议', anchor: 'tool-result', sub: true },
+  ],
+  compliance: [
+    { text: '🏗 搭建合规体系', anchor: 'compliance', sub: false },
+    { text: '一、合规体系概览', anchor: 'comp-overview', sub: true },
+    { text: '二、合规团队搭建', anchor: 'comp-team', sub: true },
+    { text: '三、政策制定', anchor: 'comp-policy', sub: true },
+    { text: '四、培训与教育', anchor: 'comp-training', sub: true },
+    { text: '五、自检清单', anchor: 'comp-checklist', sub: true },
+  ],
+};
+
+let currentSection = 'home';
+
+function showSection(id, btn) {
+  // Hide all sections
+  document.querySelectorAll('.section-page').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.chapter-nav button').forEach(b => b.classList.remove('active'));
+
+  // Show target section
+  const target = document.getElementById(id);
+  if (target) target.classList.add('active');
+  if (btn) btn.classList.add('active');
+
+  currentSection = id;
+  updateSidebar(id);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateSidebar(sectionId) {
+  const nav = document.getElementById('sidebar-nav');
+  nav.innerHTML = '';
+  const items = sidebarContents[sectionId] || [];
+  items.forEach((item, idx) => {
+    const li = document.createElement('li');
+    if (item.sub) li.className = 'sub';
+    const a = document.createElement('a');
+    a.textContent = item.text;
+    a.href = '#' + item.anchor;
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      const el = document.getElementById(item.anchor);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+    li.appendChild(a);
+    nav.appendChild(li);
+  });
+}
+
+// ===== Back to Top =====
+const backBtn = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+  backBtn.classList.toggle('visible', window.scrollY > 300);
+});
+
+// ===== Init =====
+updateSidebar('home');
+</script>
+</body>
+</html>
